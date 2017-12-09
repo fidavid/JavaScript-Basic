@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Pruevas de JavaScript</title>
+	</head>
+	<body>
+		<div id="primer_div">
+			
+		</div>
+		<script>
+			function crearElemento (titulo, texto) {
+				var div = document.createElement("div");
+				var titulo1 = document.createElement("h1");
+				var parrafo = document.createElement("p");
+
+				var contenido1 = document.createTextNode(titulo);
+				var contenido2 = document.createTextNode(texto);
+
+				div.appendChild(titulo1);
+				div.appendChild(parrafo);
+				titulo1.appendChild(contenido1);
+				parrafo.appendChild(contenido2);
+
+				var div2 = document.getElementById("primer_div");
+				div2.appendChild(div);
+			}
+
+			function eliminarUltimoElemento(){
+				var padre = document.getElementById('primer_div');
+				var hijos = padre.getElementsByTagName('div');
+				var ultima_posicion = hijos.length - 1;
+				padre.removeChild( hijos[ultima_posicion] );
+			}
+
+			crearElemento('Título 1','Texto 1');
+			crearElemento('Título 2','Texto 2');
+			crearElemento('Título 3','Texto 3');
+			crearElemento('Título 4','Texto 4');
+			crearElemento('Título 5','Texto 5');
+			crearElemento('Título 6','Texto 6');
+			crearElemento('Título 7','Texto 7');
+			crearElemento('Título 8','Texto 8');
+			eliminarUltimoElemento();
+		</script>
+	</body>
+</html>
